@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List
 import uvicorn
-from backend.cluster import StorageCluster
+from cluster import StorageCluster
 
 # Initialize FastAPI app
 app = FastAPI(
