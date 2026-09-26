@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_BASE = 'http://localhost:8000/api';
+  const API_BASE = 'https://fault-tolerant-storage-1-5.onrender.com/api';
 
   // Fetch cluster status every 2 seconds
   useEffect(() => {
