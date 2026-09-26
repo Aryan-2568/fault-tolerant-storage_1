@@ -1,0 +1,302 @@
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.control-panel h2 {
+  color: #00d4ff;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* Control Sections */
+.control-section {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.control-section h3 {
+  color: #00d4ff;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Control Groups */
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.control-group label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-group input,
+.control-group select,
+.control-group textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #e0e0e0;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.control-group input:focus,
+.control-group select:focus,
+.control-group textarea:focus {
+  border-color: rgba(0, 212, 255, 0.8);
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.control-group input:disabled,
+.control-group select:disabled,
+.control-group textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+  border-color: #00d4ff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+
+.btn-success {
+  background: rgba(68, 255, 68, 0.2);
+  color: #44ff44;
+  border-color: #44ff44;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: rgba(68, 255, 68, 0.4);
+  box-shadow: 0 0 8px rgba(68, 255, 68, 0.5);
+}
+
+.btn-danger {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+  border-color: #ff4444;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: rgba(255, 68, 68, 0.4);
+  box-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+}
+
+.btn-warning {
+  background: rgba(255, 170, 0, 0.2);
+  color: #ffaa00;
+  border-color: #ffaa00;
+}
+
+.btn-warning:hover:not(:disabled) {
+  background: rgba(255, 170, 0, 0.4);
+  box-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+}
+
+.btn-info {
+  background: rgba(100, 200, 255, 0.2);
+  color: #64c8ff;
+  border-color: #64c8ff;
+}
+
+.btn-info:hover:not(:disabled) {
+  background: rgba(100, 200, 255, 0.4);
+  box-shadow: 0 0 8px rgba(100, 200, 255, 0.5);
+}
+
+.btn-demo {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 255, 136, 0.3));
+  color: #00ff88;
+  border-color: #00ff88;
+  font-size: 13px;
+  padding: 10px 14px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn-demo:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.5), rgba(0, 255, 136, 0.5));
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+}
+
+/* Button Groups */
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.button-group.single {
+  grid-template-columns: 1fr;
+}
+
+/* Status Message */
+.status-message {
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-size: 12px;
+  font-weight: bold;
+  animation: slideIn 0.3s ease;
+}
+
+.status-message.success {
+  background: rgba(68, 255, 68, 0.1);
+  color: #44ff44;
+  border-left-color: #44ff44;
+}
+
+.status-message.error {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border-left-color: #ff4444;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.loading-overlay .spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(0, 212, 255, 0.2);
+  border-top-color: #00d4ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* Tips Section */
+.tips-section {
+  background: rgba(100, 200, 255, 0.05);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 11px;
+}
+
+.tips-section h4 {
+  color: #64c8ff;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tips-section ul {
+  list-style: none;
+  color: #aaa;
+}
+
+.tips-section li {
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.tips-section li:before {
+  content: "▪ ";
+  position: absolute;
+  left: 0;
+  color: #64c8ff;
+}
+
+/* Scenario Description */
+.scenario-description {
+  font-size: 11px;
+  color: #888;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+
+  .control-group input,
+  .control-group select,
+  .control-group textarea {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 11px;
+    padding: 10px;
+  }
+}

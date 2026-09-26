@@ -1,0 +1,239 @@
+.event-log {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-log h2 {
+  color: #00d4ff;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.event-log-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* No Events */
+.no-events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Events List */
+.events-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px;
+}
+
+/* Event Item */
+.event-item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 4px;
+  font-size: 12px;
+  animation: slideIn 0.3s ease;
+  transition: all 0.2s;
+}
+
+.event-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Event Icon */
+.event-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.event-item.severity-success .event-icon {
+  background: rgba(68, 255, 68, 0.2);
+  color: #44ff44;
+}
+
+.event-item.severity-info .event-icon {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+}
+
+.event-item.severity-warning .event-icon {
+  background: rgba(255, 170, 0, 0.2);
+  color: #ffaa00;
+}
+
+.event-item.severity-error .event-icon {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+}
+
+/* Event Content */
+.event-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-message {
+  color: #e0e0e0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Event Metadata */
+.event-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 10px;
+  color: #888;
+}
+
+.event-type {
+  background: rgba(0, 212, 255, 0.15);
+  color: #64c8ff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.event-time {
+  color: #666;
+}
+
+/* Legend */
+.event-legend {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.legend-icon.success {
+  background: rgba(68, 255, 68, 0.2);
+  color: #44ff44;
+}
+
+.legend-icon.info {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+}
+
+.legend-icon.warning {
+  background: rgba(255, 170, 0, 0.2);
+  color: #ffaa00;
+}
+
+.legend-icon.error {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+}
+
+/* Scrollbar */
+.events-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.events-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.events-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+.events-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .event-legend {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .event-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .event-icon {
+    order: -1;
+    width: auto;
+    height: auto;
+  }
+
+  .event-legend {
+    grid-template-columns: 1fr;
+  }
+
+  .event-message {
+    font-size: 11px;
+  }
+
+  .event-meta {
+    flex-wrap: wrap;
+  }
+}
